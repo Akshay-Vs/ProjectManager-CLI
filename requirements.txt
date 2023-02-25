@@ -1,0 +1,4 @@
+flask
+fastapi
+tqdm
+transformers
