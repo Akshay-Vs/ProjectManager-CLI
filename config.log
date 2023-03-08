@@ -1,0 +1,131 @@
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config directory already exists
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+INFO:root:Config file does not exist
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+DEBUG:root:COnfig Requested to remove option path
+WARNING:root:Config option path not found
+DEBUG:root:Config Requested to remove section DEFAULT
+WARNING:root:Config section DEFAULT not found
+CRITICAL:root:Config file deleted
+INFO:root:Config file does not exist
+INFO:root:Config file created at /home/akshay/.config/projectmanager/config.ini
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section Section created
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section Secion created
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section Seion created
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section Sion created
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+DEBUG:root:Config file exists
+INFO:root:Config file read
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section ion created
+INFO:root:Config file saved
+CRITICAL:root:Config file deleted
+INFO:root:Config file does not exist
+INFO:root:Config file created at /home/akshay/.config/projectmanager/config.ini
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section Section1 created
+INFO:root:Config file saved
+CRITICAL:root:Config file deleted
+INFO:root:Config file does not exist
+INFO:root:Config file created at /home/akshay/.config/projectmanager/config.ini
+INFO:root:Config file updated: [DEFAULT] path:myprojects
+INFO:root:Config file saved
+DEBUG:root:Config Array converted to comma seperated value
+INFO:root:Config file updated: [DEFAULT] packages:node,test
+INFO:root:Config file saved
+INFO:root:Config section Section1 created
+INFO:root:Config file saved
