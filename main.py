@@ -1,56 +1,82 @@
 import os
 import sys
-from lib.configstream import Filestream
-from utils import utilsmanager
+import shutil
+from lib.configstream import ConfigStream
 
-class ProjectManager(utilsmanager.utils):   
+
+class ProjectManager:
     def __init__(self):
-        self.project = None
-        self.language= None
-        self.framework = None
-        self.packages = None
-        self.package_manager = None
+        self.CONFIG_DIR = os.path.expanduser("~/.config/projectmanager")
 
     def create(self):
-        self.project = input("Enter project name: ")
-        self.language = input("Enter primary language: ")
-        self.framework = input("Enter framework name: ")
-        self.packages = input("Enter additional packages: ")
-        self.package_manager = input("Enter prefered package manager: ")
-        self.createProject()
+        if os.path.exists(f"{self.CONFIG_DIR}/config.ini"):
+            self.config = ConfigStream(self.CONFIG_DIR)
+            self.project_dir = self.config.read_config("project_dir")
 
-    def createProject(self):
-        if self.language == 'python':
-            self.createPythonProject()
-        elif self.language == 'javascript':
-            self.createJavascriptProject()
-        elif self.language == 'java':
-            self.createJavaProject()
-        elif self.language == 'c++':
-            self.createCppProject()
         else:
-            print("Language not supported")
+            self.project_dir = input("Enter project directory: ")
+            self.config = ConfigStream(self.CONFIG_DIR)
+            self.config.write_config("project_dir", self.project_dir)
 
-    def createPythonProject(self):
-        self.package_manager = 'pip'
-        self.createProjectDirectory()
-        # self.createProjectFiles()
-        # self.createProjectStructure()
-        # self.createProjectEnvironment()
-        # self.createProjectDependencies()
-        # self.createProjectReadme()
-        # self.createProjectGitignore()
-        # self.createProjectLicense()
-        # self.createProjectContributing()
-        # self.createProjectChangelog()
-        # self.createProjectCodeOfConduct()
-        # self.createProjectSecurity()
-        # self.createProjectSupport()
-        # self.createProjectCodeowners()
-        # self.createProjectIssueTemplate()
-        # self.createProjectPullRequestTemplate()
-        # self.createProjectGithubActions()
-        
-    
+        self.project_name = input("Enter project name: ")
+        self.project_language = input("Enter primary language: ")
+        self.project_framework = input("Enter framework name: ")
+        self.project_packages = input("Enter additional packages: ")
+        self.package_manager = input("Enter prefered package manager: ")
 
-    
+        if not self.project_framework:
+            self.project_framework = "default"
+        if not self.package_manager:
+            self.package_manager = "default"
+        if not self.project_language:
+            self.project_language = "default"
+
+        self.generate_config()
+
+    def generate_config(self):
+        self.project_config_dir = f"{self.project_dir}/{self.project_language}/{self.project_framework}/{self.project_name}"
+        os.makedirs(self.project_config_dir)
+        print("Generating project config")
+        self.project_config = ConfigStream(self.project_config_dir)
+        self.project_config.write_config("project_name", self.project_name)
+        self.project_config.write_config("language", self.project_language)
+        self.project_config.write_config("framework", self.project_framework)
+        self.project_config.write_config("packages", self.project_packages)
+        self.project_config.write_config("package_manager", self.package_manager)
+
+    def generate_template(self):
+        try:
+            shutil.copytree(
+                f"templates/{self.project_language}/{self.project_framework}",
+                self.project_config_dir,
+            )
+            self.__create_file("README.md", f"# {self.project_name}")
+            self.__create_file("LICENSE", "MIT")
+            print("Project template generated")
+            
+        except Exception as e:
+            print(e)
+
+    def activate_virtualenv(self):
+        pass
+
+    def install_packages(self):
+        pass
+
+    def create_readme(self):
+        pass
+
+    def download_license(self):
+        pass
+
+    def git_push(self):
+        pass
+
+    def __create_file(self, filename, content):
+        with open (f"{self.project_config_dir}/{filename}", "x") as file:
+            file.write(content)
+
+
+if __name__ == "__main__":
+    project = ProjectManager()
+    project.create()

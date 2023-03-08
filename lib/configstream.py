@@ -5,12 +5,11 @@ import logging
 import csv
 
 
-class Configstream:
+class ConfigStream:
     # Read and write config files
-    def __init__(self, path=os.path.expanduser("~/")):
-        self.CONFIG_FILE_PATH = os.path.expanduser(
-            f"{path}.config/projectmanager/config.ini"
-        )
+    def __init__(self, path):
+        self.CONFIG_FILE_PATH = os.path.expanduser(f"{path}/.config.ini")
+        print(self.CONFIG_FILE_PATH)
         logging.basicConfig(filename="config.log", level=logging.DEBUG)
         logging.Formatter(
             "%(asctime)s | %(levelname)s | %(message)s", "%m-%d-%Y %H:%M:%S"
@@ -28,10 +27,16 @@ class Configstream:
             self.config = configparser.ConfigParser()
             self.config["DEFAULT"] = {"type": "config"}
 
-            if not os.path.exists(f"{path}.config/projectmanager"): os.mkdir(os.path.expanduser(f"{path}.config/projectmanager"))
-            with open(self.CONFIG_FILE_PATH, "x") as configfile:
-                self.config.write(configfile)
-            logging.info(f"Config file created at {self.CONFIG_FILE_PATH}")
+            try:
+                if not os.path.exists(f"{path}.config.ini"):
+                    os.mkdir(os.path.expanduser(f"{path}"))
+                with open(self.CONFIG_FILE_PATH, "x") as configfile:
+                    self.config.write(configfile)
+                logging.info(f"Config file created at {self.CONFIG_FILE_PATH}")
+            except FileExistsError:
+                logging.critical(
+                    f"Config file already exists at {self.CONFIG_FILE_PATH}"
+                )
 
     def create_config_section(self, section):
         self.config.add_section(section)
@@ -95,12 +100,12 @@ class Configstream:
 
 
 if __name__ == "__main__":
-    config = Configstream()
+    config = ConfigStream(os.path.expanduser("~/.config/projectmanager"))
     config.write_config("path", "myprojects")
     config.write_config_list("packages", ["node", "test"])
     print(config.read_config("path"))
     print(config.read_config_list("packages"))
-    config.create_config_section('Section1')
+    config.create_config_section("Section1")
     config.remove_config_option("path")
-    config.remove_config_section('DEFAULT')
+    config.remove_config_section("DEFAULT")
     config.delete_config_file()
