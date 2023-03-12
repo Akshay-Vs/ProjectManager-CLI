@@ -1,4 +1,4 @@
 # Project manager
 
 ## Dev notes
-starting point - main.py
+starting point - main.py 
