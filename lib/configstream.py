@@ -1,8 +1,6 @@
 import os
-import sys
 import configparser
 import logging
-import csv
 
 
 class ConfigStream:
@@ -101,11 +99,4 @@ class ConfigStream:
 
 if __name__ == "__main__":
     config = ConfigStream(os.path.expanduser("~/.config/projectmanager"))
-    config.write_config("path", "myprojects")
-    config.write_config_list("packages", ["node", "test"])
-    print(config.read_config("path"))
-    print(config.read_config_list("packages"))
-    config.create_config_section("Section1")
-    config.remove_config_option("path")
-    config.remove_config_section("DEFAULT")
-    config.delete_config_file()
+    config.write_config("project_dir", "/home/akshay/Myspace/Projects")

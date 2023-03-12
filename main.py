@@ -1,5 +1,4 @@
 import os
-import sys
 import shutil
 from lib.configstream import ConfigStream
 
@@ -9,6 +8,7 @@ class ProjectManager:
         self.CONFIG_DIR = os.path.expanduser("~/.config/projectmanager")
 
     def create(self):
+        print(os.path.exists(f"{self.CONFIG_DIR}/config.ini"))
         if os.path.exists(f"{self.CONFIG_DIR}/config.ini"):
             self.config = ConfigStream(self.CONFIG_DIR)
             self.project_dir = self.config.read_config("project_dir")
@@ -32,6 +32,7 @@ class ProjectManager:
             self.project_language = "default"
 
         self.generate_config()
+        self.generate_template()
 
     def generate_config(self):
         self.project_config_dir = f"{self.project_dir}/{self.project_language}/{self.project_framework}/{self.project_name}"

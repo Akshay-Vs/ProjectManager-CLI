@@ -1,21 +1,10 @@
 DEBUG:root:Config file exists
 INFO:root:Config file read
-INFO:root:Config file updated: [DEFAULT] project_dir:            logging.info("Project template generated")
-INFO:root:Config file saved
-DEBUG:root:Config file exists
-INFO:root:Config file read
 INFO:root:Config file updated: [DEFAULT] project_dir:/home/akshay/Myspace/Projects
 INFO:root:Config file saved
 INFO:root:Config file does not exist
-CRITICAL:root:Config file already exists at /home/akshay/Myspace/Projects/Python/default/Test2/.config.ini
-INFO:root:Config file updated: [DEFAULT] project_name:Test2
-DEBUG:root:Config file exists
-INFO:root:Config file read
-INFO:root:Config file updated: [DEFAULT] project_dir:/home/akshay/Myspace/Projects
-INFO:root:Config file saved
-INFO:root:Config file does not exist
-CRITICAL:root:Config file already exists at /home/akshay/Myspace/Projects/Python/default/Test3/.config.ini
-INFO:root:Config file updated: [DEFAULT] project_name:Test3
+CRITICAL:root:Config file already exists at /home/akshay/Myspace/Projects/Python/default/Test1/.config.ini
+INFO:root:Config file updated: [DEFAULT] project_name:Test1
 INFO:root:Config file saved
 INFO:root:Config file updated: [DEFAULT] language:Python
 INFO:root:Config file saved
@@ -23,5 +12,5 @@ INFO:root:Config file updated: [DEFAULT] framework:default
 INFO:root:Config file saved
 INFO:root:Config file updated: [DEFAULT] packages:
 INFO:root:Config file saved
-INFO:root:Config file updated: [DEFAULT] package_manager:pip
+INFO:root:Config file updated: [DEFAULT] package_manager:default
 INFO:root:Config file saved

@@ -18,5 +18,3 @@ class Initialize():
             logging.info("Project directory exists")
             os.mkdir(f"{self.project_dir}/{self.project_name}")
     
-    def create_project_files(self):
-        
