@@ -7,7 +7,7 @@ class ConfigStream:
     # Read and write config files
     def __init__(self, path):
         self.CONFIG_FILE_PATH = os.path.expanduser(f"{path}/.config.ini")
-        print(self.CONFIG_FILE_PATH)
+        logging.info(self.CONFIG_FILE_PATH)
         logging.basicConfig(filename="config.log", level=logging.DEBUG)
         logging.Formatter(
             "%(asctime)s | %(levelname)s | %(message)s", "%m-%d-%Y %H:%M:%S"
@@ -37,10 +37,13 @@ class ConfigStream:
                 )
 
     def create_config_section(self, section):
-        self.config.add_section(section)
-        logging.info(f"Config section {section} created")
-        self.save_config()
-
+        if not self.config.has_section(section):
+            self.config.add_section(section)
+            logging.info(f"Config section {section} created")
+            self.save_config()
+        else:
+            logging.warning(f"Cannot suplicate {section}, section already exist")
+            
     def write_config(self, option, value, section="DEFAULT"):
         r"Write new option and value to config"
         self.config.set(section, option, value)
@@ -70,7 +73,7 @@ class ConfigStream:
 
     def remove_config_option(self, option, section="DEFAULT"):
         logging.debug(f"COnfig Requested to remove option {option}")
-        if self.config.has_option(option, section):
+        if self.config.has_option(section, option):
             self.config.remove_option(option, section)
             self.save_config()
             logging.critical(f"Config option {option} deleted")
@@ -87,9 +90,11 @@ class ConfigStream:
             logging.warning(f"Config section {section} not found")
 
     def delete_config_file(self):
-        os.remove(self.CONFIG_FILE_PATH)
-        logging.critical("Config file deleted")
-
+        try:
+            os.remove(self.CONFIG_FILE_PATH)
+            logging.critical("Config file deleted")
+        except FileNotFoundError:
+            logging.warning("Failed to delete: Config file not foound")
     # def print_config_file(self):
     #     for section in self.config.sections():
     #         print(f"[{section}]")
