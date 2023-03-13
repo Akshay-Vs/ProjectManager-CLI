@@ -7,11 +7,11 @@ class ConfigStream:
     # Read and write config files
     def __init__(self, path):
         self.CONFIG_FILE_PATH = os.path.expanduser(f"{path}/.config.ini")
+        log_formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s", "%m-%d-%Y %H:%M:%S")
+        log_handler = logging.FileHandler("config.log")
+        log_handler.setFormatter(log_formatter)
+        logging.getLogger().addHandler(log_handler)
         logging.info(self.CONFIG_FILE_PATH)
-        logging.basicConfig(filename="config.log", level=logging.DEBUG)
-        logging.Formatter(
-            "%(asctime)s | %(levelname)s | %(message)s", "%m-%d-%Y %H:%M:%S"
-        )
 
         # create config file if it does not exist
         if os.path.exists(self.CONFIG_FILE_PATH):
