@@ -5,7 +5,7 @@ import os
 from datetime import date
 
 logging.basicConfig(
-    filename="readme.log",
+    filename="logs/readme.log",
     level=logging.DEBUG,
     format="%(asctime)s:%(levelname)s:%(message)s",
 )

@@ -1,7 +1,7 @@
 # this file should contains create project structure ,environmenn, dependencies, readme, gitignore, license, contributing, changelog, code of conduct, security, support, codeowners, issue template, pull request template, github actions
 import os
 import logging
-from lib.configstream import ConfigStream
+from configstream import ConfigStream
 
 
 class Initialize():

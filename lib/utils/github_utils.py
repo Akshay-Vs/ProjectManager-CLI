@@ -34,5 +34,5 @@ def create_repo(tocken, name, description, private=True):
     return response.status_code
 
 if __name__ == "__main__":
-    tocken = os.getenv("GITHUB_CREATE_REPO")
-    print(create_repo(tocken,"ProjectManager-CLI",""))
+    tocken = os.getenv("GITHUB_TOKEN")
+    print(create_repo(tocken,"CLI-test",""))

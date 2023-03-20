@@ -1,3 +1,3 @@
 from base64enc import *
-from httprequest import *
+from github_utils import *
 from project_initializer import *

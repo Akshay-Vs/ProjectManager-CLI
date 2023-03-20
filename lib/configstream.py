@@ -8,7 +8,7 @@ class ConfigStream:
     def __init__(self, path):
         self.CONFIG_FILE_PATH = os.path.expanduser(f"{path}/.config.ini")
         log_formatter = logging.Formatter("%(asctime)s | %(levelname)s | %(message)s", "%m-%d-%Y %H:%M:%S")
-        log_handler = logging.FileHandler("config.log")
+        log_handler = logging.FileHandler("logs/config.log")
         log_handler.setFormatter(log_formatter)
         logging.getLogger().addHandler(log_handler)
         logging.info(self.CONFIG_FILE_PATH)
